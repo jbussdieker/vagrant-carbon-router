@@ -7,6 +7,6 @@ classes:
  - collectd
  - collectd::plugin::write_graphite
 apt::update:
-  frequency: always
+  frequency: daily
 carbon::caches:
   a: {}
