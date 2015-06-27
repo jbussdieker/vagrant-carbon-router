@@ -1,0 +1,12 @@
+classes:
+ - apt
+ - git
+ - rabbitmq
+ - whisper
+ - carbon
+ - collectd
+ - collectd::plugin::write_graphite
+apt::update:
+  frequency: always
+carbon::caches:
+  a: {}
