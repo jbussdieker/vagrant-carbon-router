@@ -4,9 +4,20 @@ classes:
  - rabbitmq
  - whisper
  - carbon
+ - graphite_web
  - collectd
  - collectd::plugin::write_graphite
 apt::update:
   frequency: daily
 carbon::caches:
-  a: {}
+  a:
+    line_receiver_port: 2103
+carbon::storage_schemas:
+  'carbon':
+    pattern: '^carbon\.'
+    retentions: '60:90d'
+    order: 1
+  'default_1sec_for_1day':
+    pattern: '.*'
+    retentions: '1s:2d'
+    order: 99

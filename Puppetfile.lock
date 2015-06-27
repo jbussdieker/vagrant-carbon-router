@@ -1,9 +1,11 @@
 FORGE
   remote: https://forgeapi.puppetlabs.com
   specs:
-    jbussdieker-carbon (0.0.8)
+    jbussdieker-carbon (0.0.10)
       jbussdieker-whisper (>= 0)
       puppetlabs-concat (>= 0)
+      puppetlabs-vcsrepo (>= 0)
+    jbussdieker-graphite_web (0.0.6)
       puppetlabs-vcsrepo (>= 0)
     jbussdieker-whisper (0.0.8)
       puppetlabs-vcsrepo (>= 0)
@@ -26,6 +28,8 @@ FORGE
 
 DEPENDENCIES
   jbussdieker-carbon (>= 0)
+  jbussdieker-graphite_web (>= 0)
+  jbussdieker-whisper (>= 0)
   pdxcat-collectd (>= 0)
   puppetlabs-apt (>= 0)
   puppetlabs-git (>= 0)
