@@ -5,13 +5,19 @@ classes:
  - whisper
  - carbon
  - graphite_web
+ - graphite_web::vhost
  - collectd
+ - collectd::plugin::cpu
+ - collectd::plugin::memory
+ - collectd::plugin::disk
+ - collectd::plugin::df
+ - collectd::plugin::network
  - collectd::plugin::write_graphite
 apt::update:
   frequency: daily
 carbon::caches:
   a:
-    line_receiver_port: 2103
+    line_receiver_port: 2003
 carbon::storage_schemas:
   'carbon':
     pattern: '^carbon\.'
@@ -21,3 +27,5 @@ carbon::storage_schemas:
     pattern: '.*'
     retentions: '1s:2d'
     order: 99
+collectd::interval: 1
+collectd::purge_config: true
